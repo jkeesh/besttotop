@@ -1,0 +1,25 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<title>Best Ideas</title>
+</head>
+
+<body>
+
+	<div id="loginwrapper">
+		<div style="float:right">
+			<a href="{{ url }}">{{ url_linktext }}</a>
+		</div>
+		<h1>Log in to {{ list.name }} ({{ list.key.id }})</h1>
+
+
+		<form action="/loginfor/{{ listID }}" method="post">
+			<div class="createField"><input type="text" name="listPassword"></div>
+			<div class="submitIdea"><input type="submit" value="Login"></div>
+		</form>
+
+
+	</div>
+
+</body>
+</html>

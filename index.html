@@ -1,0 +1,58 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<title>Best To The Top</title>
+</head>
+
+<body>
+
+	<div id="mainwrapper">
+		<div style="float:right">
+			<span>{{ greeting }} </span> |
+			<a href="/edit/">edit name</a> |
+			<a href="{{ url }}">{{ url_linktext }}</a>
+		</div>
+
+		<h1>Best To the Top</h1>
+
+		{% if exception %}
+
+		<div class="exception">{{ exception }}</div>
+
+		{% endif %}
+
+		<div id="innerwrap">
+
+			<div id="createList">
+				<h1>Create a List</h1>
+
+				<form action="/create" method="post">
+					<h2>List Name</h2>
+					<div class="createField"><input type="text" name="listName"></div>
+					<h2>List Password</h2><h3>Leave blank for no password</h3>
+					<div class="createField"><input type="text" name="listPassword"></div>
+					<div class="submitIdea"><input type="submit" value="Create List"></div>
+				</form>
+			</div>
+
+
+			{% if mylists %}
+			<div id="myLists">
+				<h1>My Lists</h1>
+
+				{% for list in mylists %}
+				<h2 class="listName"><a href="/list/{{ list.key.id }}">{{ list.name }}</a></h2>
+				{% endfor %}
+			</div>
+			{% endif %}
+
+
+
+		</div>
+
+
+
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<title>Best Ideas</title>
+</head>
+
+<body>
+
+	<div id="wrapper">
+		<div style="float:right">
+			<a href="{{ url }}">{{ url_linktext }}</a>
+		</div>
+		<h1>Edit Name</h1>
+
+
+		<form action="/edit/{{ listID }}" method="post">
+			<div class="textField"><input type="text" name="name" value="{{ username }}"></div>
+			<div class="submitIdea"><input type="submit" value="Change Name"></div>
+		</form>
+
+
+	</div>
+
+</body>
+</html>

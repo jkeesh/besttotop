@@ -1,0 +1,156 @@
+body {
+	font-family: Trebuchet MS, Georgia, Verdana, Helvetica, sans-serif;
+	background-color: #fff;
+}
+
+table{
+}
+
+.userName{
+	margin-top: 80px;
+	font-family: Trebuchet MS, Georgia, Verdana, Helvetica, sans-serif;
+	font-size: 30px;
+}
+
+.profileLink, .profileLink a{
+	text-decoration: none;
+	color: gray;
+}
+
+.profileLink:hover, .profileLink a:hover{
+	text-decoration: underline;
+}
+
+.exception{
+	color: red;
+	background-color: #C0C0C0;
+	font-weight: bold;
+	padding: 17px;
+}
+
+#mainwrapper td{
+	padding: 20px;
+}
+
+#innerwrap{
+	padding-top: 20px;
+	margin: auto;
+	width: 680px;
+}
+
+#createList{
+	width: 300px;
+	padding: 20px;
+	background-color: #A3A3A3;
+	float: left;
+}
+
+#myLists{
+	padding: 20px;
+	float: left;
+	width: 300px;
+	background-color: #CDCDCD;
+}
+
+.listName{
+	font-size: 20px;
+}
+
+#loginwrapper{
+	margin: auto;
+	width: 400px;
+	padding: 100px;
+}
+
+.submitIdea input, .accept input{
+	border: 1px solid #888;
+	font-family: 'Trebuchet MS', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+	font-size: 130%;
+	font-weight: bold;
+	margin-top: 3px; 
+	float: left;
+}
+
+.shareField input{
+	font-family: 'Trebuchet MS', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+	font-size: 20px;
+	height: 30px;
+	width: 150px;
+	float: right;
+	margin-top: 3px;	
+}
+
+.shareText{
+	font-family: 'Trebuchet MS', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+	font-size: 20px;
+	margin-top: 6px;
+	margin-right: 7px;
+	float: right;	
+}
+
+.createField input{
+	font-family: 'Trebuchet MS', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+	font-size: 130%;
+	height: 40px;
+	width: 300px;
+}
+
+.textField input{
+	font-family: 'Trebuchet MS', 'Liberation Sans', 'DejaVu Sans', sans-serif;
+	font-size: 130%;
+	height: 40px;
+	width: 700px;
+}
+
+.accept{
+	float: right;
+}
+
+hr{
+	border: none 0; 
+	border-top: 1px dashed #000;
+	height: 1px;
+}
+
+h3{
+
+}
+
+.ideaAuthor{
+	float:right;
+}
+
+#wrapper{
+	margin:auto;
+	width: 700px;
+}
+
+#mainwrapper{
+	margin:auto;
+	width: 900px;
+}
+
+textarea{
+	width: 700px;
+	height: 70px;
+	font-family: Consolas, Menlo, Monaco;
+	font-size: 20px;
+}
+
+.score{
+	text-align: center;
+	color: #757575;
+	font-weight: bold;
+	font-size: 240%;
+	vertical-align: top;
+}
+
+form{
+	padding: 0px;
+	margin: 0px;
+}
+
+.voteButtons{
+	margin: auto;
+	width: 50px;
+}

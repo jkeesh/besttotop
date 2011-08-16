@@ -1,0 +1,99 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<title>Best Ideas</title>
+</head>
+
+<body>
+
+	<div id="wrapper">
+		<div style="float:right">
+			<a href="/">home</a> |
+			<a href="/edit/{{ listID }}">edit name</a> |
+			<a href="{{ url }}">{{ url_linktext }}</a>
+			{% if list.hasPassword %}
+			<br/>list password: {{ list.password }}
+			{% endif %}
+		</div>
+		<h1>{{ listName }}</h1>
+
+
+
+		<form action="/newidea/{{ listID }}" method="post">
+			<div><textarea name="content"></textarea></div>
+			<div class="submitIdea"><input type="submit" value="Submit Idea"></div>
+			<div class="shareField"><input id="theUrl" type="text" name="share" value="{{ theUrl }}" onclick="document.getElementById('theUrl').select()"/><span class="shareText">Share:</span></div>
+
+		</form>
+		
+		<div style="clear:both"></div>
+
+		<table width="100%">
+			<tr>
+				<td colspan="3"><hr/></td>
+			</tr>
+			{% for item in infoList %}
+			<tr>
+				<td>
+					<div class="voteButtons">
+						<form action="/upvote/{{ listID }}" method="post">
+							<input type="hidden" name="id" value="{{ item.0.key.id }}">
+							{% ifequal item.1.theVote 1 %} 
+								<div><input type="image" src="/images/upvote_voted.png"></div>
+							{% endifequal %}
+							{% ifnotequal item.1.theVote 1 %}
+								<div><input type="image" src="/images/upvote.png"></div>
+							{% endifnotequal %}
+						</form>
+						<div class="score">{{ item.0.score }}</div>
+						<form action="/downvote/{{ listID }}" method="post">
+							<input type="hidden" name="id" value="{{ item.0.key.id }}">
+							{% ifequal item.1.theVote -1 %} 
+								<div><input type="image" src="/images/downvote_voted.png"></div>
+							{% endifequal %}
+							{% ifnotequal item.1.theVote -1 %}
+								<div><input type="image" src="/images/downvote.png"></div>
+							{% endifnotequal %}
+						</form>
+					</div>
+				</td>
+
+				<td>
+					<div style="padding:10px">
+						<h3>{{ item.0.content|escape }}</h3>
+						<span class="voteInfo">
+							{{ item.0.upvotes|add:item.0.downvotes }} vote{{ item.0.upvotes|add:item.0.downvotes|pluralize }}
+						</span>
+						<span class="ideaAuthor">
+							{% if item.0.authorInfo.displayName %}
+							<a href="/profile/{{ item.0.authorInfo.key.id }}" class="profileLink">{{ item.0.authorInfo.displayName }}</a>
+							{% else %}
+							<a href="/profile/{{ item.0.authorInfo.key.id }}" class="profileLink">{{ item.0.author.nickname }}</a>
+							{% endif %}
+						</span>
+					</div>
+				</td>
+
+				{% if admin %}
+				<td>
+					<form action="/accept/{{ listID }}" method="post">
+						<input type="hidden" name="id" value="{{ item.0.key.id }}">
+						<div class="accept"><input type="submit" value="Accept"></div>
+					</form>
+				</td>
+				{% endif %}
+
+			</tr>
+
+			<tr>
+				<td colspan="3"><hr/></td>
+			</tr>
+			{% endfor %}
+
+
+		</table>
+
+	</div>
+
+</body>
+</html>

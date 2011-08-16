@@ -1,0 +1,25 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<title>Best Ideas</title>
+</head>
+
+<body>
+
+	<div id="wrapper">
+		<div style="float:right">
+			<a href="/">home</a> |
+			<a href="/edit/">edit name</a> |
+			<a href="{{ url }}">{{ url_linktext }}</a>
+		</div>
+		<h1>Profile for {{ userInfo.displayName }}</h1>
+		
+		<div class="userName">Username: {{ userInfo.user.nickname }}</div>
+
+		
+
+
+	</div>
+
+</body>
+</html>
